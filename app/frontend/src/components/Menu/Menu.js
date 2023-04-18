@@ -6,6 +6,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import QrCode2Icon from '@mui/icons-material/QrCode2';
 import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
@@ -29,7 +30,7 @@ function Menu() {
       </DrawerHeader>
       <Divider />
       <List>
-        {['Qr Code', 'Ordens de Serviço'].map((text, index) => (
+        {['Qr Code', 'Clientes', 'Ordens de Serviço'].map((text, index) => (
           <ListItem key={text} disablePadding sx={{ display: 'block' }}>
             <ListItemButton
               sx={{
@@ -45,7 +46,9 @@ function Menu() {
                   justifyContent: 'center',
                 }}
               >
-                {index % 2 === 0 ? <QrCode2Icon /> : <TimeToLeaveIcon />}
+                {index === 0 && <QrCode2Icon />}
+                {index === 1 &&  <PeopleAltIcon />}
+                {index === 2 && <TimeToLeaveIcon />}
               </ListItemIcon>
               <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
