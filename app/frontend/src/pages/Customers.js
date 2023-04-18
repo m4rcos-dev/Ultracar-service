@@ -1,6 +1,11 @@
+import { Box } from "@mui/material"
+import CutomersTable from "../components/CutomersTable/CutomersTable"
+
 function Customers() {
   return (
-    <div>Customers</div>
+    <Box>
+      <CutomersTable />
+    </Box>
   )
 }
 
