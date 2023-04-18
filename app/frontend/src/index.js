@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import theme from './styles/theme';
 import { CssBaseline, ThemeProvider } from '@mui/material';
+import { BrowserRouter } from 'react-router-dom'
 import { ProviderConfig } from './context/ProviderConfig';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,9 +14,11 @@ root.render(
 
     <ThemeProvider theme={theme}>
       <CssBaseline>
-        <ProviderConfig>
-          <App />
-        </ProviderConfig>
+        <BrowserRouter>
+          <ProviderConfig>
+            <App />
+          </ProviderConfig>
+        </BrowserRouter>
       </CssBaseline>
     </ThemeProvider>
 
