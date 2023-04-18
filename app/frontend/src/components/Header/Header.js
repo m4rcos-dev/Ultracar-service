@@ -1,10 +1,10 @@
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import { useContext } from 'react';
 import { ContextConfig } from '../../context/ContextConfig';
 import { AppBar, Box } from './HeaderStyle';
+import { logo } from '../../assets/index'
 
 function Header() {
   const { valueContext, handleMenuOpen } = useContext(ContextConfig)
@@ -23,7 +23,7 @@ function Header() {
               ...(valueContext.openMenu && { display: 'none' }),
             }}
           >
-            <MenuIcon />
+            <img src={logo} alt="logo" style={{ width: "40px"}}/>
           </IconButton>
           <Typography variant="h6" noWrap component="div">
             Mini variant drawer

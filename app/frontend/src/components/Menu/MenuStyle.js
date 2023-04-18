@@ -25,7 +25,6 @@ const closedMixin = (theme) => ({
 });
 
 export const DrawerHeader = styled('div')(({ theme }) => ({
-  backgroundColor: theme.palette.secondary.main,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-end',
