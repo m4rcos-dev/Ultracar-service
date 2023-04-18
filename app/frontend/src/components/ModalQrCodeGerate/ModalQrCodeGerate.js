@@ -1,12 +1,18 @@
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { ContextConfig } from '../../context/ContextConfig';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import QRCode from 'react-qr-code';
+import QRCodeLink from 'qrcode';
+import { Button, Link } from '@mui/material';
+import DownloadIcon from '@mui/icons-material/Download';
 
 const style = {
   position: 'absolute',
   top: '50%',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
   left: '50%',
   transform: 'translate(-50%, -50%)',
   bgcolor: 'background.paper',
@@ -16,7 +22,20 @@ const style = {
 };
 
 function ModalQrCodeGerate() {
+  const [qrCodeImg, setQrCodeImg] = useState('');
   const { valueContext, handleModalGerate } = useContext(ContextConfig);
+
+  useEffect(() => {
+    const handleQrCodeImg = () => {
+      QRCodeLink.toDataURL(valueContext.currentQrCode, {
+        width: 600,
+        margin: 3,
+      }, (err, url) => {
+        setQrCodeImg(url);
+      })
+    };
+    handleQrCodeImg();
+  }, [])
 
   return (
     <Modal
@@ -29,6 +48,9 @@ function ModalQrCodeGerate() {
         <QRCode
           value={valueContext.currentQrCode}
         />
+        <Link href={qrCodeImg} download={`qrcode.png`} sx={{ marginTop: 2}}>
+          <Button variant="outlined" endIcon={<DownloadIcon />}>Baixar QrCode</Button>
+        </Link>
       </Box>
     </Modal>
   );
