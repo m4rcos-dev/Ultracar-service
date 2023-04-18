@@ -8,9 +8,10 @@ import { StyledTableCell, StyledTableRow, StyleTableContainer } from './Customer
 import { useContext } from 'react';
 import { ContextConfig } from '../../context/ContextConfig';
 import { Link } from '@mui/material';
+import ModalQrCodeGerate from '../ModalQrCodeGerate/ModalQrCodeGerate';
 
 function CutomersTable() {
-  const { valueContext } = useContext(ContextConfig);
+  const { valueContext, handleModalGerate } = useContext(ContextConfig);
   const openMenu = valueContext.openMenu;
 
   return (
@@ -38,9 +39,7 @@ function CutomersTable() {
                 <Link
                   component="button"
                   variant="body2"
-                  onClick={() => {
-                    console.info("I'm a button.");
-                  }}
+                  onClick={() => handleModalGerate(true)}
                 >
                   Gerar
                 </Link>
@@ -49,6 +48,7 @@ function CutomersTable() {
           ))}
         </TableBody>
       </Table>
+      <ModalQrCodeGerate />
     </StyleTableContainer>
   );
 }
