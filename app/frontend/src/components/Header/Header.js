@@ -1,11 +1,12 @@
-import { styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useState } from 'react';
+import { useContext } from 'react';
+import { ContextConfig } from '../../context/ContextConfig';
 
 const drawerWidth = 240;
 
@@ -28,24 +29,20 @@ const AppBar = styled(MuiAppBar, {
 }));
 
 function Header() {
-  const [open, setOpen] = useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
+  const { valueContext, handleMenuOpen } = useContext(ContextConfig)
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={valueContext.openMenu}>
         <Toolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
-            onClick={handleDrawerOpen}
+            onClick={() => handleMenuOpen(true)}
             edge="start"
             sx={{
               marginRight: 5,
-              ...(open && { display: 'none' }),
+              ...(valueContext.openMenu && { display: 'none' }),
             }}
           >
             <MenuIcon />
