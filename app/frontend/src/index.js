@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import theme from './defaultStyles/theme';
+import theme from './styles/theme';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { ProviderConfig } from './context/ProviderConfig';
 
