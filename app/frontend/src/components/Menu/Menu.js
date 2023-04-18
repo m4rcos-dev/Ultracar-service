@@ -13,6 +13,7 @@ import { useTheme } from '@mui/material';
 import { useContext } from 'react';
 import { ContextConfig } from '../../context/ContextConfig';
 import { Drawer, DrawerHeader } from './MenuStyle';
+import { logoText } from '../../assets';
 
 function Menu() {
   const theme = useTheme();
@@ -20,62 +21,63 @@ function Menu() {
 
   return (
     <Drawer variant="permanent" open={valueContext.openMenu}>
-    <DrawerHeader>
-      <IconButton onClick={() => handleMenuOpen(!valueContext.openMenu)}>
-        {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-      </IconButton>
-    </DrawerHeader>
-    <Divider />
-    <List>
-      {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-        <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-          <ListItemButton
-            sx={{
-              minHeight: 48,
-              justifyContent: open ? 'initial' : 'center',
-              px: 2.5,
-            }}
-          >
-            <ListItemIcon
+      <DrawerHeader>
+        <IconButton onClick={() => handleMenuOpen(!valueContext.openMenu)}>
+          <img src={logoText} alt="logo" style={{ width: "180px" }} />
+          {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+        </IconButton>
+      </DrawerHeader>
+      <Divider />
+      <List>
+        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+            <ListItemButton
               sx={{
-                minWidth: 0,
-                mr: open ? 3 : 'auto',
-                justifyContent: 'center',
+                minHeight: 48,
+                justifyContent: open ? 'initial' : 'center',
+                px: 2.5,
               }}
             >
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-          </ListItemButton>
-        </ListItem>
-      ))}
-    </List>
-    <Divider />
-    <List>
-      {['All mail', 'Trash', 'Spam'].map((text, index) => (
-        <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-          <ListItemButton
-            sx={{
-              minHeight: 48,
-              justifyContent: open ? 'initial' : 'center',
-              px: 2.5,
-            }}
-          >
-            <ListItemIcon
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : 'auto',
+                  justifyContent: 'center',
+                }}
+              >
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+          <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+            <ListItemButton
               sx={{
-                minWidth: 0,
-                mr: open ? 3 : 'auto',
-                justifyContent: 'center',
+                minHeight: 48,
+                justifyContent: open ? 'initial' : 'center',
+                px: 2.5,
               }}
             >
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-          </ListItemButton>
-        </ListItem>
-      ))}
-    </List>
-  </Drawer>
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : 'auto',
+                  justifyContent: 'center',
+                }}
+              >
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Drawer>
   )
 }
 
