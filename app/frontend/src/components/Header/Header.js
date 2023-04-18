@@ -1,18 +1,17 @@
-import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useContext } from 'react';
 import { ContextConfig } from '../../context/ContextConfig';
-import { AppBar } from './HeaderStyle';
+import { AppBar, Box } from './HeaderStyle';
 
 function Header() {
   const { valueContext, handleMenuOpen } = useContext(ContextConfig)
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <AppBar position="fixed" open={valueContext.openMenu}>
+    <Box>
+      <AppBar open={valueContext.openMenu}>
         <Toolbar>
           <IconButton
             color="inherit"

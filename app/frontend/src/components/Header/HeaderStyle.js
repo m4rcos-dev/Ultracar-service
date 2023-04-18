@@ -1,11 +1,13 @@
 import { styled } from '@mui/material/styles';
 import MuiAppBar from '@mui/material/AppBar';
+import MuiBox from '@mui/material/Box';
 
 const drawerWidth = 240;
 
 export const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
+  position: 'fixed',
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
@@ -20,3 +22,8 @@ export const AppBar = styled(MuiAppBar, {
     }),
   }),
 }));
+
+export const Box = styled(MuiBox)(() => ({
+  display: "flex"
+}));
+
