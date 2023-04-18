@@ -26,7 +26,7 @@ function Header() {
             <img src={logo} alt="logo" style={{ width: "40px"}}/>
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Mini variant drawer
+            SCANEAR
           </Typography>
         </Toolbar>
       </AppBar>
