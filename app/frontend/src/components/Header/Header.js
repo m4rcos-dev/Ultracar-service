@@ -26,7 +26,7 @@ function Header() {
             <img src={logo} alt="logo" style={{ width: "40px"}}/>
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            SCANEAR
+            Boas Vindas!
           </Typography>
         </Toolbar>
       </AppBar>

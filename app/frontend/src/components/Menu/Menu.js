@@ -15,10 +15,26 @@ import { useContext } from 'react';
 import { ContextConfig } from '../../context/ContextConfig';
 import { Drawer, DrawerHeader } from './MenuStyle';
 import { logoText } from '../../assets';
+import { useNavigate  } from 'react-router-dom';
 
 function Menu() {
   const theme = useTheme();
-  const { valueContext, handleMenuOpen } = useContext(ContextConfig)
+  const { valueContext, handleMenuOpen } = useContext(ContextConfig);
+  const navigate = useNavigate();
+
+  const handleRoute = (currentRoute) => {
+    switch (currentRoute) {
+      case 'Qr Code':
+        navigate('/');
+        break;
+      case 'Clientes':
+        navigate('/customers');
+        break;
+      case 'Ordens de Serviço':
+        navigate('/orders');
+        break;
+    }
+  };
 
   return (
     <Drawer variant="permanent" open={valueContext.openMenu}>
@@ -38,6 +54,7 @@ function Menu() {
                 justifyContent: open ? 'initial' : 'center',
                 px: 2.5,
               }}
+              onClick={() => handleRoute(text)}
             >
               <ListItemIcon
                 sx={{
@@ -47,7 +64,7 @@ function Menu() {
                 }}
               >
                 {index === 0 && <QrCode2Icon />}
-                {index === 1 &&  <PeopleAltIcon />}
+                {index === 1 && <PeopleAltIcon />}
                 {index === 2 && <TimeToLeaveIcon />}
               </ListItemIcon>
               <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
