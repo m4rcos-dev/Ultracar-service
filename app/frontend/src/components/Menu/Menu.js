@@ -11,7 +11,8 @@ import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import MuiDrawer from '@mui/material/Drawer';
 import { styled, useTheme } from '@mui/material';
-import { useState } from 'react';
+import { useContext } from 'react';
+import { ContextConfig } from '../../context/ContextConfig';
 
 const drawerWidth = 240;
 
@@ -64,17 +65,12 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 function Menu() {
   const theme = useTheme();
-
-  const handleDrawerClose = () => {
-    const [open, setOpen] = useState(false);
-    setOpen(false);
-    console.log(open);
-  };
+  const { valueContext, handleMenuOpen } = useContext(ContextConfig)
 
   return (
-    <Drawer variant="permanent" open={open}>
+    <Drawer variant="permanent" open={valueContext.openMenu}>
     <DrawerHeader>
-      <IconButton onClick={handleDrawerClose}>
+      <IconButton onClick={() => handleMenuOpen(!valueContext.openMenu)}>
         {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
       </IconButton>
     </DrawerHeader>
