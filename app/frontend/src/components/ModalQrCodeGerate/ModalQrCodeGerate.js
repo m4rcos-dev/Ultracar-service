@@ -28,7 +28,7 @@ function ModalQrCodeGerate() {
     >
       <Box sx={style}>
         <QRCode
-          value="teste"
+          value={valueContext.currentQrCode}
         />
       </Box>
     </Modal>

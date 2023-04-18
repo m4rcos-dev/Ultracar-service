@@ -11,8 +11,13 @@ import { Link } from '@mui/material';
 import ModalQrCodeGerate from '../ModalQrCodeGerate/ModalQrCodeGerate';
 
 function CutomersTable() {
-  const { valueContext, handleModalGerate } = useContext(ContextConfig);
+  const { valueContext, handleCurrentQrCode } = useContext(ContextConfig);
   const openMenu = valueContext.openMenu;
+
+  const gerateQrCode = ({name, car}) => {
+    const currentUrl = `/start/${name}/${car}`;
+    handleCurrentQrCode(currentUrl);
+  };
 
   return (
     <StyleTableContainer component={Paper}
@@ -39,7 +44,7 @@ function CutomersTable() {
                 <Link
                   component="button"
                   variant="body2"
-                  onClick={() => handleModalGerate(true)}
+                  onClick={() => gerateQrCode(row)}
                 >
                   Gerar
                 </Link>
