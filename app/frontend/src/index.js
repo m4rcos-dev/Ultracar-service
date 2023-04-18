@@ -5,14 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import theme from './defaultStyles/theme';
 import { CssBaseline, ThemeProvider } from '@mui/material';
+import { ProviderConfig } from './context/ProviderConfig';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
+      <CssBaseline>
+        <ProviderConfig>
+          <App />
+        </ProviderConfig>
+      </CssBaseline>
     </ThemeProvider>
+
   </React.StrictMode>
 );
 

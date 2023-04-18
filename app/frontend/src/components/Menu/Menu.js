@@ -68,6 +68,7 @@ function Menu() {
   const handleDrawerClose = () => {
     const [open, setOpen] = useState(false);
     setOpen(false);
+    console.log(open);
   };
 
   return (
