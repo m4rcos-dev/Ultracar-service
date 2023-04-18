@@ -1,6 +1,11 @@
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import { styled } from '@mui/material/styles';
-import { TableRow } from '@mui/material';
+import { TableContainer, TableRow } from '@mui/material';
+
+
+export const StyleTableContainer = styled(TableContainer)(() => ({
+  minWidth: 100,
+}));
 
 export const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
