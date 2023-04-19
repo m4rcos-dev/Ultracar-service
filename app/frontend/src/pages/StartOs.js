@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import OrderServicesHeader from "../components/OrderServicesTable/OrderServicesHeader";
+import SelectMechanic from "../components/OrderServicesTable/SelectMechanic";
 import { ContextData } from "../context/ContextData";
 
 function StartOs() {
@@ -20,6 +21,7 @@ function StartOs() {
   return (
     <Box>
       <OrderServicesHeader />
+      <SelectMechanic />
     </Box>
   )
 }
