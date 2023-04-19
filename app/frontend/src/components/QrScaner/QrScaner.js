@@ -7,8 +7,8 @@ function QrScaner() {
   const [result, setResult] = useState('No result');
   const delay = 100;
   const previewStyle = {
-    height: 700,
-    width: 500,
+    height: 240,
+    width: 320,
   }
   const navigate = useNavigate();
 
