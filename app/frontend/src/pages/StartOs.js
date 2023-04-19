@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import OrderServicesHeader from "../components/OrderServicesTable/OrderServicesHeader";
 import SelectMechanic from "../components/OrderServicesTable/SelectMechanic";
+import SelectService from "../components/OrderServicesTable/SelectService";
 import { ContextData } from "../context/ContextData";
 
 function StartOs() {
@@ -23,6 +24,7 @@ function StartOs() {
     <Box>
       <OrderServicesHeader />
       <SelectMechanic />
+      <SelectService />
     </Box>
   )
 }

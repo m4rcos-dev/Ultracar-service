@@ -1,14 +1,14 @@
 export const servicesData = [
   {
-    service: 'teste',
+    label: 'teste',
     cost: 30,
   },
   {
-    service: 't4',
+    label: 't4',
     cost: 320,
   },
   {
-    service: 'tes4ffte',
+    label: 'tes4ffte',
     cost: 120,
   },
 ]
