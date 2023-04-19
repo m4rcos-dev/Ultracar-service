@@ -11,7 +11,10 @@ export function ProviderData({ children }) {
       car: '',
       mechanic: '',
     },
-    currentService: [{}]
+    currentService: [{
+      service: '',
+      cost: '',
+    }]
   });
 
   const handleCurrentCustomer = (currentCustomer) => {
