@@ -6,6 +6,7 @@ import { ContextData } from './ContextData';
 export function ProviderData({ children }) {
   const [contextData, setContextData] = useState({
     currentCustomer: {
+      os: '',
       name: '',
       car: '',
     },

@@ -13,6 +13,17 @@ function OrderServicesHeader() {
   const { currentCustomer } = contextData;
   const { valueContext } = useContext(ContextConfig);
   const openMenu = valueContext.openMenu;
+  const currentDate = new Date();
+  const optionsDate = {
+    day: 'numeric',
+    month: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    hour12: false
+  };
+  const dateFormated = currentDate.toLocaleString('pt-Br', optionsDate)
 
   return (
     <List sx={{ marginLeft: openMenu ? 30 : 10 }}>
@@ -22,7 +33,7 @@ function OrderServicesHeader() {
             <MiscellaneousServicesIcon />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="O.S." secondary="Jan 9, 2014" />
+        <ListItemText primary="O.S." secondary={currentCustomer.os} />
       </ListItem>
       <ListItem>
         <ListItemAvatar>
@@ -46,7 +57,7 @@ function OrderServicesHeader() {
             <DateRangeIcon />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="Data inicio" secondary="July 20, 2014" />
+        <ListItemText primary="Data inicio" secondary={dateFormated} />
       </ListItem>
     </List>
   )

@@ -10,10 +10,11 @@ function StartOs() {
 
   useEffect(() => {
     const currentCustomer = {
+      os: Math.floor(Math.random() * 101),
       name,
       car,
     }
-    handleCurrentCustomer(currentCustomer)
+    handleCurrentCustomer(currentCustomer);
   }, [])
 
   return (
