@@ -22,7 +22,7 @@ function QrScaner() {
   }
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box>
       <Player
       autoplay
         loop
@@ -36,7 +36,6 @@ function QrScaner() {
         onScan={handleScan}
         facingMode='rear'
       />
-      <p>{result}</p>
     </Box>
   )
 }
