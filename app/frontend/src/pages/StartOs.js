@@ -23,8 +23,10 @@ function StartOs() {
   return (
     <Box>
       <OrderServicesHeader />
-      <SelectMechanic />
-      <SelectService />
+      <Box sx={{ display: 'flex' }}>
+        <SelectMechanic />
+        <SelectService />
+      </Box>
     </Box>
   )
 }
