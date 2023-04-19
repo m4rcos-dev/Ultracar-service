@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  frontend:
+    container_name: frontend_ultracar_service
+    image: frontend_ultracar_service
+    build: ./app/frontend
+    ports:
+      - 3000:3000
+    working_dir: /app-frontend
+    restart: on-failure
