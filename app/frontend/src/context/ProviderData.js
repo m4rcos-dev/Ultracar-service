@@ -11,15 +11,23 @@ export function ProviderData({ children }) {
       car: '',
       mechanic: '',
     },
+    currentService: [{}]
   });
 
   const handleCurrentCustomer = (currentCustomer) => {
     setContextData({ ...contextData, currentCustomer: currentCustomer });
   };
 
+  const handleCurrentService = (currentService) => {
+    setContextData({
+      ...contextData,
+      currentService: [...contextData.currentService, currentService]
+    });
+  };
+
   return (
     <ContextData.Provider value={{
-      contextData, handleCurrentCustomer,
+      contextData, handleCurrentCustomer, handleCurrentService
     }}>
       {children}
     </ContextData.Provider>
