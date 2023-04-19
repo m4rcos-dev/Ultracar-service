@@ -1,6 +1,11 @@
+import { Box } from "@mui/material"
+import QrScaner from "../components/QrScaner/QrScaner"
+
 function ScanerQrCode() {
   return (
-    <div>ScanerQrCode</div>
+    <Box>
+      <QrScaner />
+    </Box>
   )
 }
 
