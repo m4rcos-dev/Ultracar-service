@@ -1,14 +1,14 @@
-import { Paper, Table, TableBody, TableHead, TableRow } from "@mui/material"
+import { Paper, Table, TableBody, TableHead, TableRow } from "@mui/material";
 import { useContext } from "react";
 import { ContextConfig } from "../../context/ContextConfig";
 import { ContextData } from "../../context/ContextData";
-import { StyledTableCell, StyledTableRow, StyleTableContainer } from "../CutomersTable/CustomerTableStyle"
+import { StyledTableCell, StyledTableRow, StyleTableContainer } from "../CutomersTable/CustomerTableStyle";
 
-function OrderServiceTable() {
+function AllOrderTable() {
   const { valueContext } = useContext(ContextConfig);
   const openMenu = valueContext.openMenu;
   const { contextData } = useContext(ContextData);
-  const { currentService } = contextData;
+  const { ordersServices } = contextData;
 
   return (
     <StyleTableContainer component={Paper}
@@ -19,17 +19,19 @@ function OrderServiceTable() {
     >
       <TableHead>
         <TableRow>
-          <StyledTableCell>Serviço</StyledTableCell>
-          <StyledTableCell align="left">Valor</StyledTableCell>
+          <StyledTableCell>Cliente</StyledTableCell>
+          <StyledTableCell align="left">Carro</StyledTableCell>
+          <StyledTableCell align="left">Mecânico</StyledTableCell>
         </TableRow>
       </TableHead>
       <TableBody>
-        {currentService.map((row) => (
-          <StyledTableRow key={row.service}>
+        {ordersServices.map((row) => (
+          <StyledTableRow key={row.name}>
             <StyledTableCell component="th" scope="row">
-              {row.service}
+              {row.name}
             </StyledTableCell>
-            <StyledTableCell align="left">{row.cost}</StyledTableCell>
+            <StyledTableCell align="left">{row.car}</StyledTableCell>
+            <StyledTableCell align="left">{row.mechanic}</StyledTableCell>
           </StyledTableRow>
         ))}
       </TableBody>
@@ -38,4 +40,4 @@ function OrderServiceTable() {
   )
 }
 
-export default OrderServiceTable
+export default AllOrderTable

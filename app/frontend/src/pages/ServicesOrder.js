@@ -1,6 +1,11 @@
+import { Box } from "@mui/material"
+import AllOrderTable from "../components/OrderServicesTable/AllOrderTable"
+
 function ServicesOrder() {
   return (
-    <div>ServicesOrder</div>
+    <Box>
+      <AllOrderTable />
+    </Box>
   )
 }
 
