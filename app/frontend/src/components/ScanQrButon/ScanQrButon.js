@@ -1,17 +1,26 @@
-import { Box } from "@mui/material"
+import { Box, Button } from "@mui/material"
 import { Player } from '@lottiefiles/react-lottie-player';
-import { scanQrCode, staticQrButon } from "../../assets";
+import { scanQrCode } from "../../assets";
+import QrCodeScannerIcon from '@mui/icons-material/QrCodeScanner';
+import { animateStyle, button, container } from "./ScanQrButonStyle";
+
 
 function ScanQrButon() {
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-      <img src={staticQrButon} alt="qrcod buton" />
+    <Box sx={container}>
       <Player
         autoplay
         loop
         src={scanQrCode}
-        style={{ width: 500 }}
+        style={animateStyle}
       />
+      <Button
+        variant="contained"
+        endIcon={<QrCodeScannerIcon />}
+        sx={button}
+      >
+        Ler QrCode
+      </Button>
     </Box>
   )
 }
