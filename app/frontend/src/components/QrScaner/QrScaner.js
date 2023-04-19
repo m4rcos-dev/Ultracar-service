@@ -22,7 +22,7 @@ function QrScaner() {
   }
 
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+    <Box sx={{ display: 'flex' }}>
       <Player
       autoplay
         loop

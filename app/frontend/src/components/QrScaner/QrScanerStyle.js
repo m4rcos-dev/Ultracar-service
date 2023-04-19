@@ -1,11 +1,15 @@
 export const camStyle = {
-  height: 240,
+  position: 'absolute',
+  height: 400,
   width: 320,
+  marginLeft: 80,
+  zIndex: 0,
 }
 
 export const animateStyle = {
   position: 'absolute',
   height: '400px',
-  width: '400px',
-  marginBottom: '80px'
+  width: '450px',
+  // marginBottom: '80px',
+  zIndex: 1,
 }
