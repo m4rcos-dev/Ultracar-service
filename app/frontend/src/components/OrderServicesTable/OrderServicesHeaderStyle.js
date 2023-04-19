@@ -6,4 +6,10 @@ export const List = styled(MuiList)(({theme}) => ({
   width: '100%',
   maxWidth: 1000,
   backgroundColor: theme.palette.secondary.main,
+
+  '@media (max-width: 600px)': {
+    flexDirection: 'column',
+    marginLeft: 25,
+    maxWidth: 330,
+  }
 }));
