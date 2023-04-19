@@ -5,7 +5,7 @@ import { servicesData } from "../../data/ServiceData"
 import { Autocomplete, Box } from "./SelectMechanicStyle";
 import AddchartIcon from '@mui/icons-material/Addchart';
 import { ContextData } from "../../context/ContextData";
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function SelectService() {
   const { valueContext } = useContext(ContextConfig);
@@ -52,7 +52,7 @@ function SelectService() {
 
   useEffect(() => {
     const isDisableFinal = () => {
-      if(currentService.length > 1) setDisabledFinal(false);
+      if (currentService.length > 1) setDisabledFinal(false);
     }
     isDisableFinal();
   }, [currentService])
@@ -75,6 +75,7 @@ function SelectService() {
         onChange={handelCost}
       />
       <Button
+        sx={{ width: 200, marginLeft: 2, marginRight: 2 }}
         disabled={disabled}
         variant="contained"
         endIcon={<AddchartIcon />}
@@ -84,11 +85,12 @@ function SelectService() {
         Adicionar Serviço
       </Button>
       <Button
+        sx={{ width: 200, marginLeft: 2, marginRight: 2 }}
         disabled={disabledFinal}
         variant="contained"
         endIcon={<AddchartIcon />}
-      // sx={button}
-      onClick={addOs}
+        // sx={button}
+        onClick={addOs}
       >
         Concluir
       </Button>

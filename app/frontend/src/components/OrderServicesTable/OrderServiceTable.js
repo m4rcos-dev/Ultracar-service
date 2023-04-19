@@ -14,7 +14,7 @@ function OrderServiceTable() {
 
   return (
     <StyleTableContainer component={Paper}
-    sx={{ maxWidth: openMenu ? 1600 : 1800, marginLeft: openMenu ? 30 : 6, }}
+    sx={{ maxWidth: openMenu ? 1600 : 1800, marginLeft: openMenu ? 30 : 10, marginTop: 5}}
   >
     <Table sx={{ minWidth: 100, maxWidth: openMenu ? 1600 : 1800 }}
       aria-label="customized table"
