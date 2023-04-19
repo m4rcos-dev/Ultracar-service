@@ -5,17 +5,19 @@ import { servicesData } from "../../data/ServiceData"
 import { Autocomplete, Box } from "./SelectMechanicStyle";
 import AddchartIcon from '@mui/icons-material/Addchart';
 import { ContextData } from "../../context/ContextData";
+import { useNavigate  } from 'react-router-dom';
 
 function SelectService() {
   const { valueContext } = useContext(ContextConfig);
   const openMenu = valueContext.openMenu;
-  const { contextData, handleCurrentService } = useContext(ContextData);
+  const { contextData, handleCurrentService, handleOrdersServices } = useContext(ContextData);
   const currrentMechanic = contextData.currentCustomer.mechanic;
   const [service, setService] = useState('');
   const [cost, setCost] = useState('');
   const [disabled, setDisabled] = useState(true)
   const [disabledFinal, setDisabledFinal] = useState(true);
-  const currentService = contextData.currentService
+  const currentService = contextData.currentService;
+  const navigate = useNavigate();
 
   const handelService = (event) => {
     setService(event.target.textContent);
@@ -31,6 +33,12 @@ function SelectService() {
       cost,
     })
   }
+
+  const addOs = () => {
+    const currentOs = contextData.currentCustomer;
+    handleOrdersServices(currentOs)
+    navigate('/orders');
+  };
 
   useEffect(() => {
     const isDisable = () => {
@@ -80,7 +88,7 @@ function SelectService() {
         variant="contained"
         endIcon={<AddchartIcon />}
       // sx={button}
-      // onClick={() => handleModalGerate(true)}
+      onClick={addOs}
       >
         Concluir
       </Button>
