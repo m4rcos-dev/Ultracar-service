@@ -22,7 +22,7 @@ function ModalQrCodeGerate() {
       })
     };
     handleQrCodeImg();
-  }, [])
+  }, [valueContext.currentQrCode])
 
   return (
     <Modal
