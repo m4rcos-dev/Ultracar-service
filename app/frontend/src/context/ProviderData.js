@@ -14,6 +14,12 @@ export function ProviderData({ children }) {
     currentService: [{
       service: '',
       cost: '',
+    }],
+    ordersServices: [{
+      os: '',
+      name: '',
+      car: '',
+      mechanic: '',
     }]
   });
 
@@ -28,9 +34,16 @@ export function ProviderData({ children }) {
     });
   };
 
+  const handleOrdersServices = (addOrder) => {
+    setContextData({
+      ...contextData,
+      ordersServices: [...contextData.ordersServices, addOrder]
+    });
+  };
+
   return (
     <ContextData.Provider value={{
-      contextData, handleCurrentCustomer, handleCurrentService
+      contextData, handleCurrentCustomer, handleCurrentService, handleOrdersServices
     }}>
       {children}
     </ContextData.Provider>
