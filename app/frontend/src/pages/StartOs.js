@@ -14,6 +14,7 @@ function StartOs() {
       os: Math.floor(Math.random() * 101),
       name,
       car,
+      mechanic: '',
     }
     handleCurrentCustomer(currentCustomer);
   }, [])

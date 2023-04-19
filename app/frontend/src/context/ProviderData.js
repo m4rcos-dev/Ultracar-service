@@ -9,6 +9,7 @@ export function ProviderData({ children }) {
       os: '',
       name: '',
       car: '',
+      mechanic: '',
     },
   });
 
