@@ -1,4 +1,4 @@
-<h1 align="center">🎉 Boas-vindas ao meu repositório do proejto Ultracar Service </h1>
+<h1 align="center">🎉 Boas-vindas ao meu repositório do projeto Ultracar Service </h1>
 
 ![swagger documetation blogs api](https://user-images.githubusercontent.com/104791582/233059459-f1eaab3e-587e-44cb-9584-6998ed23d9a9.gif)
 
